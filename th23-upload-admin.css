@@ -1,0 +1,267 @@
+/* plugin option page */
+.th23-upload-options h1 .icon {
+  width: auto;
+  height: 36px;
+}
+.th23-upload-options h2:nth-child(n+3) {
+  /* options - section header */
+  margin-top: 2.5em;
+}
+.th23-upload-options .description {
+  /* options - description */
+  display: block;
+}
+.th23-upload-options .th23-upload-screen-option-hide_description .description,
+.th23-upload-options .th23-upload-screen-option-hide_description .section-description {
+  /* options - hide descriptions */
+  display: none;
+}
+.th23-upload-options .notice-description {
+  /* options - notices within description */
+  display: block;
+  padding: 5px 10px;
+  font-size: 13px;
+}
+@media screen and (min-width: 783px) {
+  .th23-upload-options .child th {
+    /* options - children (on bigger screens) */
+    width: 175px;
+    padding-left: 25px;
+  }
+  .th23-upload-options .sub-child th {
+    /* options - sub-children (on bigger screens) */
+    width: 150px;
+    padding-left: 50px;
+  }
+}
+.th23-upload-options input + .unit,
+.th23-upload-options select + .unit {
+  margin-left: 0.25em;
+}
+.th23-upload-options div.option-template {
+  /* options template - scroll if to wide */
+  overflow-x: auto;
+}
+.th23-upload-options table.option-template {
+  /* options template - table */
+  margin-top: 1em;
+  border-collapse: collapse;
+}
+.th23-upload-options table.option-template th,
+.th23-upload-options table.option-template td {
+  border: 1px solid lightgray;
+  padding: .8em .5em;
+  text-align: center;
+}
+.th23-upload-options table.option-template th span.hint {
+  /* options template - header descriptions */
+  border-bottom: 1px dotted gray;
+  cursor: help;
+}
+.th23-upload-options table.option-template input.regular-text {
+  /* options template - input fields */
+  min-width: 7em;
+  width: 100%;
+}
+.th23-upload-options table.option-template tr[id$='-template'] {
+  /* option template - master input row */
+  display: none;
+}
+
+/* plugin information */
+div.th23-upload-admin-about {
+  position: relative;
+  margin-top: 1.5em;
+  border: 1px solid #ccd0d4;
+  border-left: 4px solid #00a0d2;
+  -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  padding: 1px 12px;
+}
+div.th23-upload-admin-about .icon {
+  position: absolute;
+  top: calc(50% - 24px);
+  width: auto;
+  height: 48px;
+}
+div.th23-upload-admin-about .icon + p {
+  margin-left: 64px;
+}
+div.th23-upload-admin-about a {
+  text-decoration: none;
+}
+
+/* professional extension upload */
+#th23-upload-pro-file {
+  position: absolute;
+  left: -9999px;
+  visibility: hidden;
+}
+
+label[for="th23-upload-pro-file"] {
+  vertical-align: unset;
+  color: #0073aa;
+}
+.notice-error label[for="th23-upload-pro-file"], .notice-warning label[for="th23-upload-pro-file"] {
+  text-decoration: underline;
+}
+
+/* == customization: from here on plugin specific == */
+/* add/remove watermark in media gallery, watermark mass actions and watermark image selection in plugin settings */
+.th23-upload-admin-watermark .success,
+#th23-upload-options .option-watermarks_mass_actions .success,
+#th23-upload-options .option-watermarks_image .success {
+  font-weight: bold;
+  color: #009100;
+}
+.th23-upload-admin-watermark .error,
+#th23-upload-options .option-watermarks_mass_actions .error,
+#th23-upload-options .option-watermarks_image .error {
+  font-weight: bold;
+  color: #a00;
+}
+.th23-upload-admin-watermark .blinking,
+#th23-upload-options .option-watermarks_mass_actions .blinking,
+#th23-upload-options .option-watermarks_image .blinking {
+  -webkit-animation: th23-upload-blinking 1.2s infinite;
+          animation: th23-upload-blinking 1.2s infinite;
+}
+.th23-upload-admin-watermark .blinking.temp,
+#th23-upload-options .option-watermarks_mass_actions .blinking.temp,
+#th23-upload-options .option-watermarks_image .blinking.temp {
+  -webkit-animation-iteration-count: 3;
+          animation-iteration-count: 3;
+}
+
+@-webkit-keyframes th23-upload-blinking {
+  0% {
+    color: inherit;
+  }
+  49% {
+    color: inherit;
+  }
+  60% {
+    color: transparent;
+  }
+  99% {
+    color: transparent;
+  }
+  100% {
+    color: inherit;
+  }
+}
+
+@keyframes th23-upload-blinking {
+  0% {
+    color: inherit;
+  }
+  49% {
+    color: inherit;
+  }
+  60% {
+    color: transparent;
+  }
+  99% {
+    color: transparent;
+  }
+  100% {
+    color: inherit;
+  }
+}
+/* plugin settings page */
+.th23-upload-options .option-watermarks_position fieldset > div {
+  display: inline-grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.th23-upload-options .option-watermarks_position fieldset > div > div {
+  margin: 0 1px 1px 0;
+  background-color: lightgray;
+  padding: 4px 8px;
+  text-align: center;
+}
+.th23-upload-options .option-watermarks_image .th23-upload-watermark-image {
+  cursor: pointer;
+}
+.th23-upload-options .option-watermarks_image .th23-upload-watermark-image img {
+  max-width: 300px;
+  max-height: 100px;
+  height: auto;
+}
+.th23-upload-options .option-watermarks_image .th23-upload-watermark-placeholder {
+  width: 300px;
+  border: 2px dashed #ccc;
+  background-color: #eee;
+  padding: 4em 1em;
+  text-align: center;
+}
+.th23-upload-options .option-watermarks_image .th23-upload-watermark-selection {
+  margin-top: 10px;
+  max-height: 500px;
+  overflow-y: scroll;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+.th23-upload-options .option-watermarks_image .th23-upload-watermark-selection > span {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  width: 300px;
+  max-height: 200px;
+  margin: 0 10px 10px 0;
+  padding: 1em;
+  cursor: pointer;
+}
+.th23-upload-options .option-watermarks_image .th23-upload-watermark-selection img {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+}
+.th23-upload-options .option-watermarks_image .th23-upload-watermark-selection .caption {
+  display: block;
+  font-style: italic;
+  font-size: 13px;
+}
+.th23-upload-options .option-watermarks_image .th23-upload-watermark-selection .message {
+  display: block;
+}
+.th23-upload-options .option-watermarks_image .th23-upload-watermark-delete {
+  margin-left: 5px;
+}
+.th23-upload-options .option-watermarks_image .th23-upload-watermark-delete:hover {
+  color: red;
+}
+.th23-upload-options .option-watermarks_image #th23-upload-watermark-file {
+  position: absolute;
+  left: -9999px;
+  visibility: hidden;
+}
+@media screen and (max-width: 782px) {
+  .th23-upload-options .th23-upload-mass-action.button-secondary {
+    display: block;
+    margin-bottom: 4px;
+  }
+}
+.th23-upload-options #th23-upload-mass-progress,
+.th23-upload-options #th23-upload-mass-close {
+  display: none;
+}
+.th23-upload-options #th23-upload-mass-bar {
+  width: 100%;
+  background-color: lightgrey;
+}
+.th23-upload-options #th23-upload-mass-bar > div {
+  width: 1%;
+  height: 20px;
+  background-color: green;
+}
+.th23-upload-options #th23-upload-mass-last {
+  max-height: 200px;
+  overflow-y: scroll;
+  background: white;
+}
+.th23-upload-options #th23-upload-mass-last > div {
+  margin: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px dashed lightgray;
+}
